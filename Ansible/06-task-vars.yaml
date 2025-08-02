@@ -1,0 +1,17 @@
+- name: variables
+  hosts: local
+  connection: local
+  vars: #play level variable or globla variables
+    COURSE: "Python with Prudhviraj"
+    DURATION: "120 HRS"
+    TRAINER: "KAMBALA PRUDHVI RAJ"
+  tasks: 
+    - name: print the task variables
+      vars: 
+        COURSE: "DJANGO WITH PRUDHVIRAJ"
+      ansible.builtin.debug:
+        msg: "course is {{ COURSE }} and its duration is {{ DURATION }} with {{ TRAINER }}"
+
+    - name: print the global variables
+      ansible.builtin.debug:
+        msg: "course is {{ COURSE }} and its duration is {{ DURATION }} with {{ TRAINER }}"

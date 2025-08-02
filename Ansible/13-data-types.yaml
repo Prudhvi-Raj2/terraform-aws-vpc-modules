@@ -1,0 +1,21 @@
+- name: data types
+  hosts: local
+  connection: local
+  vars:
+    course_name: "Devops"
+    duration: 120
+    trainee: "Prudhvi raj"
+    topics:
+    - linux
+    - shell
+    - ansible
+    - AWS
+    live: true
+    tools:
+      ci: jenkins
+      cloud: AWS
+      contanarization: docker
+  tasks:
+  - name: print the data types accordingly
+    ansible.builtin.debug:
+      msg: "Hello I am learning {{ course_name }}, duration: {{ duration }}, topics are: {{ topics }}, is it live?: {{ live }}, tools covered are: {{ tools }}"

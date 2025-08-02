@@ -1,0 +1,26 @@
+- name: install and run nginx
+  hosts: web
+  become: yes # -b
+  tasks:
+  - name: install nginx
+    ansible.builtin.package:
+      name: nginx
+      state: present
+  - name: install mysql
+    ansible.builtin.package:
+      name: mysql
+      state: present
+  - name: start the nginx
+    ansible.builtin.service:
+      name: nginx
+      state: started
+      enabled: yes
+
+- name: delete mysql
+  hosts: web
+  become: yes # -b
+  tasks:
+  - name: delete mysql
+    ansible.builtin.package:
+      name: mysql
+      state: absent

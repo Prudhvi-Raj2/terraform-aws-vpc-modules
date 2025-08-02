@@ -1,0 +1,4 @@
+#mysql_root_password: ExpenseApp@1
+# MYSQL_HOST: mysql.kambalas.shop
+
+mysql_host: mysql.kambalas.shop

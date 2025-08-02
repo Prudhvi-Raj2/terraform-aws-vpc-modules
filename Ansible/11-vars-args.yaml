@@ -1,0 +1,7 @@
+- name: variable from arguments or run time parameters
+  hosts: local
+  connection: local
+  tasks: 
+  - name: Calling variables via parameters
+    ansible.builtin.debug:
+      msg: "{{ COURSE }}, Duration is {{ DURATION }} and trainer is {{ TRAINER }}"
